@@ -1,4 +1,4 @@
-= form_for @news do |f|
+= form_for @news, class: 'form-horizontal' do |f|
   - if @news.errors.any?
     #error_explanation
       %h2= "#{pluralize(@news.errors.count, "error")} prohibited this news from being saved:"
@@ -6,14 +6,17 @@
         - @news.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :url
-    = f.text_field :url
-  .field
-    = f.label :contents
-    = f.text_field :contents
-  .actions
-    = f.submit 'Save'
+  .form-group.row
+    = f.label :title, class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_field :title, class: 'form-control'
+  .form-group.row
+    = f.label :url, class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_field :url, class: 'form-control'
+  .form-group.row
+    = f.label :contents, class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_area :contents, class: 'form-control'
+  .form-group.row
+    = f.submit '投稿する', class: 'btn btn-primary'
