@@ -71,5 +71,4 @@ namespace :deploy do
       execute "service unicorn_#{fetch(:application)} restart"
     end
   end
-
 end
