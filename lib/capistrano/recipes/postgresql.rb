@@ -6,7 +6,7 @@ namespace :postgresql do
       execute :sudo, "apt-get -y install postgresql libpq-dev"
     end
   end
-  after "deploy:install", "postgresql:install"
+  after "nodejs:install", "postgresql:install"
 
   desc "Generate the database.yml configuration file."
   task :setup do 

@@ -6,5 +6,5 @@ namespace :nodejs do
       execute :sudo, "apt-get -y install nodejs"
     end
   end
-  after "deploy:install", "nodejs:install"
+  after "nginx:install", "nodejs:install"
 end

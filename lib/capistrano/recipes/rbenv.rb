@@ -21,12 +21,11 @@ BASHRC
       execute %q{export PATH="$HOME/.rbenv/bin:$PATH"}
       execute %q{eval "$(rbenv init -)"}
       execute "rbenv #{fetch(:rbenv_bootstrap)}"
-      execute "tmux"
       execute "rbenv install #{fetch(:ruby_version)}"
       execute "rbenv global #{fetch(:ruby_version)}"
       execute "gem install bundler --no-ri --no-rdoc"
       execute "rbenv rehash"
     end
   end
-  after "deploy:install", "rbenv:install"
+  after "postgresql:install", "rbenv:install"
 end
