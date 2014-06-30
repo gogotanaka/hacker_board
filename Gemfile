@@ -26,6 +26,8 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem 'unicorn'
+
 group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
