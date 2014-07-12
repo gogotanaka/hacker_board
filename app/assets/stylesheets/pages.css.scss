@@ -8,7 +8,7 @@
   -webkit-border-radius: $radius;
 }
 
-$mainColor: rgb(237,147,38);
+$mainColor: rgb(74, 175, 58);
 
 body {
   background-color: rgb(235,235,235);
@@ -25,6 +25,25 @@ body {
       @include rounded_corners(2px);
       background-color: #fff;
       padding: 30px;
+      ul#newsWrapper {
+        li {
+          list-style-type: none;
+          padding: 10px;
+          border-bottom: 1px solid #aaa;
+          p.rankingIcon {
+            @include rounded_corners(3px);
+            background-color: $mainColor;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            margin-right: 10px;
+            float: left;
+            font-size: 30px;
+            line-height: 40px;
+          }
+        }
+      }
     }
   }
 }
