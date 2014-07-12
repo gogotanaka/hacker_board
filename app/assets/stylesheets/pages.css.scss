@@ -1,0 +1,30 @@
+// Place all the styles related to the news controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin rounded_corners($radius: 3px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+$mainColor: rgb(237,147,38);
+
+body {
+  background-color: rgb(235,235,235);
+  #mainContents {
+    margin-top: 50px;
+    #news {
+      .form-group {
+        padding: 10px 0;
+      }
+    }
+    #welcome {
+      margin: 0 auto;
+      width: 1000px;
+      @include rounded_corners(2px);
+      background-color: #fff;
+      padding: 30px;
+    }
+  }
+}
