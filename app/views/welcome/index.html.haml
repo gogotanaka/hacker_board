@@ -3,8 +3,8 @@
     %i.fa.fa-pencil
     ニュースを投稿する
 
-  = link_to new_user_registration_path, class: 'btn btn-success' do
-    %i.fa.fa-pencil
+  = link_to new_user_registration_path, class: 'btn btn-primary' do
+    %i.fa.fa-facebook-square
     ユーザー登録
   %ul#newsWrapper
     - News.all.each.with_index(1) do |news, i|
