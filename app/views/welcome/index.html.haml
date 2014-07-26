@@ -3,9 +3,9 @@
     %i.fa.fa-pencil
     ニュースを投稿する
 
-  = link_to new_user_registration_path, class: 'btn btn-primary' do
+  = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary' do
     %i.fa.fa-facebook-square
-    ユーザー登録
+    Facebookログイン
   %ul#newsWrapper
     - News.all.each.with_index(1) do |news, i|
       %li
