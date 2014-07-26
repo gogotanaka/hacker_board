@@ -12,5 +12,6 @@
         %p.rankingIcon= i
         %h2= news.title
         = news.contents
+        = link_to '投票する', users_vote_path(news_id: news.id), method: :post
 
 

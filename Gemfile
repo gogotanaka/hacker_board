@@ -33,6 +33,8 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem "spring"
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 gem 'omniauth'
