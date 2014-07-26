@@ -23,10 +23,12 @@
             = news.created_at
             // = news.contents
         .commentBtn
-          .commentIcon
-            %i.fa.fa-comment
-          .commentCount
-            1 comment
+          = link_to news_path(news) do
+            .commentIcon
+              %i.fa.fa-comment
+            .commentCount
+              = news.comments.count
+              comment
 
 
 

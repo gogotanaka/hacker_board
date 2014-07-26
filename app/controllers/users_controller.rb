@@ -13,4 +13,9 @@ class UsersController < ApplicationController
     current_user.vote(news)
     redirect_to :back
   end
+
+  def post_comment
+    current_user.comments.create(params.require(:comment).permit(:contents, :news_id))
+    redirect_to :back
+  end
 end

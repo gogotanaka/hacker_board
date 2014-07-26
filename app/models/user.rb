@@ -4,8 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
-  has_one :relation_vote
+  has_many :relation_vote
   has_many :vote_news, through: :relation_vote, source: :news
+
+  has_many :comments
 
   def vote(news)
     unless vote?(news)

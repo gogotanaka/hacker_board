@@ -10,6 +10,7 @@ class NewsController < ApplicationController
   # GET /news/1
   # GET /news/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /news/new
