@@ -8,11 +8,24 @@
     Facebookログイン
   %ul#newsWrapper
     - News.all.each.with_index(1) do |news, i|
-      %li
-        %div
-          %p.rankingIcon= i
+      %li.newsList.clearfix
+        .rankingIcon= i
+        .voteInfo
+          .voteBtn
+            = link_to users_vote_path(news_id: news.id), method: :post do
+              %i.fa.fa-sort-asc
+          .voteCount
+            = news.relation_votes.count
+        .newsContents
           %h2= news.title
-        = news.contents
-        = link_to '投票する', users_vote_path(news_id: news.id), method: :post
+          = news.contents
+        .commentBtn
+          .commentIcon
+            %i.fa.fa-comment
+          .commentCount
+            1 comment
+
+
+
 
 

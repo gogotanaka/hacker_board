@@ -4,9 +4,9 @@ gem 'rails', '4.1.2'
 
 gem 'pg'
 
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', :git => 'https://github.com/zakelfassi/sass-rails' # Until the gem is officially updated.
 gem 'haml-rails'
-gem 'bootstrap-sass'
+gem 'bootflat-rails'
 gem 'font-awesome-rails'
 gem 'uglifier', '>= 1.3.0'
 
