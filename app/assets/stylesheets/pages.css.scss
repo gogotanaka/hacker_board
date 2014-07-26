@@ -103,7 +103,10 @@ body {
             h2 {
               font-size: 25px;
               margin: 0;
-              color: $mainColor;
+              a { color: $mainColor !important; }
+            }
+            .detail {
+              color: $grayColor;
             }
           }
           .commentBtn {
