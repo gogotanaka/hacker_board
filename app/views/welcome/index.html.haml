@@ -1,5 +1,5 @@
 #welcome
-  = link_to new_news_path, class: 'btn btn-danger' do
+  = link_to new_news_path, class: 'btn btn-danger', style: 'margin-right: 10px' do
     %i.fa.fa-pencil
     ニュースを投稿する
 
@@ -9,8 +9,9 @@
   %ul#newsWrapper
     - News.all.each.with_index(1) do |news, i|
       %li
-        %p.rankingIcon= i
-        %h2= news.title
+        %div
+          %p.rankingIcon= i
+          %h2= news.title
         = news.contents
         = link_to '投票する', users_vote_path(news_id: news.id), method: :post
 
