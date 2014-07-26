@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140726215804) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "news", force: true do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.string   "url"
     t.string   "contents"

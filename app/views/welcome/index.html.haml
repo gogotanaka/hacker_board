@@ -18,9 +18,11 @@
             = news.relation_votes.count
         .newsContents
           %h2
-            = link_to news.title, news.url
+            = link_to news.url do
+              = truncate(news.title, length: 20)
           .detail
             = news.created_at
+            = ' by ' + news.user.name
             // = news.contents
         .commentBtn
           = link_to news_path(news) do
