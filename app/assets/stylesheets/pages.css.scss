@@ -79,68 +79,69 @@ body {
       }
     }
     #welcome {
-      ul#newsWrapper {
-        li.newsList {
-          list-style-type: none;
-          padding: 20px 0 10px;
-          border-bottom: 1px solid #aaa;
-          vertical-align: middle;
-          .rankingIcon {
-            float: left;
-            @include rounded_corners(3px);
-            background-color: $mainColor;
-            color: #fff;
-            width: 40px;
-            height: 40px;
-            text-align: center;
-            margin: auto 10px;
-            float: left;
-            font-size: 30px;
-            line-height: 40px;
-          }
-          .voteInfo {
-            float: left;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            color: $grayColor !important;
-            .voteBtn {
-              font-size: 30px;
-              line-height: 30px;
-              margin-bottom: -10px;
-              a {
-                color: $grayColor !important;
-              }
-            }
-            .voteCount {
-              font-size: 20px;
-              line-height: 20px;
-              margin: 0;
-            }
-          }
-          .newsContents {
-            float: left;
-            h2 {
-              font-size: 25px;
-              margin: 0 0 5px 0;
-              a.title { color: $mainColor !important; }
-              a.deleteBtn { color: $grayColor !important; }
 
-            }
-            .detail {
-              color: $grayColor;
-            }
+    }
+  }
+  ul#newsWrapper {
+    li.newsList {
+      list-style-type: none;
+      padding: 20px 0 10px;
+      border-bottom: 1px solid #aaa;
+      vertical-align: middle;
+      .rankingIcon {
+        float: left;
+        @include rounded_corners(3px);
+        background-color: $mainColor;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        margin: auto 10px;
+        float: left;
+        font-size: 30px;
+        line-height: 40px;
+      }
+      .voteInfo {
+        float: left;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        color: $grayColor !important;
+        .voteBtn {
+          font-size: 30px;
+          line-height: 30px;
+          margin-bottom: -10px;
+          a {
+            color: $grayColor !important;
           }
-          .commentBtn {
-            float: right;
-            text-align: center;
-            .commentIcon {
-              color: $grayColor;
-            }
-            .commentCount {
-              color: $grayColor;
-            }
-          }
+        }
+        .voteCount {
+          font-size: 20px;
+          line-height: 20px;
+          margin: 0;
+        }
+      }
+      .newsContents {
+        float: left;
+        h2 {
+          font-size: 25px;
+          margin: 0 0 5px 0;
+          a.title { color: $mainColor !important; }
+          a.deleteBtn { color: $grayColor !important; }
+
+        }
+        .detail {
+          color: $grayColor;
+        }
+      }
+      .commentBtn {
+        float: right;
+        text-align: center;
+        .commentIcon {
+          color: $grayColor;
+        }
+        .commentCount {
+          color: $grayColor;
         }
       }
     }

@@ -1,3 +1,5 @@
 %h1= @user.name
 %h2 このユーザーの投稿
+= render 'news_list', news_list: @user.news
 %h2 このユーザーが投票投稿
+= render 'news_list', news_list: @user.vote_news
