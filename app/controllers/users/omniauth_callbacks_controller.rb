@@ -1,6 +1,5 @@
 class Users::OmniauthCallbacksController < ApplicationController
   def facebook
-    binding.pry
     auth = request.env["omniauth.auth"]
 
     unless @user = User.where(provider: auth.provider, uid: auth.uid).first
