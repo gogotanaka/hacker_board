@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def news_title(news)
     link_to news_jump_path(news), class: 'main-color', target: '_blank' do
-      truncate(news.title, length: 25)
+      truncate(news.title, length: 28)
     end
   end
 end
