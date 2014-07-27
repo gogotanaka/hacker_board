@@ -1,15 +1,17 @@
 #welcome
-  - if current_user
-    = link_to new_news_path, class: 'btn btn-info', style: 'margin-right: 10px' do
-      %i.fa.fa-pencil
-      ニュースを投稿する
-    = link_to destroy_user_session_path, method: :delete, class: 'btn btn-danger' do
-      %i.fa.fa-power-off
-      ログアウト
-  - else
-    = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary' do
-      %i.fa.fa-facebook-square
-      Facebookログイン
+  .clearfix.Btns
+    - if current_user
+      = link_to destroy_user_session_path, method: :delete, class: 'btn btn-danger pull-right' do
+        %i.fa.fa-power-off
+        ログアウト
+      = link_to new_news_path, class: 'btn btn-primary pull-right', style: 'margin-right: 10px' do
+        %i.fa.fa-pencil
+        ニュースを投稿する
+    - else
+      = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-facebook pull-right' do
+        %i.fa.fa-facebook-square
+        Facebookログイン
+
   %ul#newsWrapper
     - @news.each.with_index(1) do |news, i|
       %li.newsList.clearfix
@@ -28,10 +30,7 @@
           .voteCount
             = news.relation_votes.count
         .newsContents
-          %h2
-            = link_to news_jump_path(news), class: 'title' do
-              = truncate(news.title, length: 25)
-
+          %h2= news_title(news)
           .detail
             = ' by '
             = user_link(news.user)
