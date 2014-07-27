@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  before_action :set_news, only: [:show, :destroy]
+  before_action :set_news, only: [:show, :destroy, :jump]
 
   # GET /news/1
   # GET /news/1.json
@@ -34,6 +34,9 @@ class NewsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_path, notice: 'News was successfully destroyed.' }
     end
+  end
+
+  def jump
   end
 
   private

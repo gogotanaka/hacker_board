@@ -29,10 +29,10 @@
             = news.relation_votes.count
         .newsContents
           %h2
-            = link_to news.url, class: 'title' do
+            = link_to news_jump_path(news), class: 'title' do
               = truncate(news.title, length: 20)
             - if current_user == news.user
-              = link_to 'x', news_path(news), method: :delete, class: 'deleteBtn'
+              = link_to 'x', news_path(news), method: :delete, class: 'deleteBtn', data: {confirm: 'ニュースを削除します。本当に宜しいでしょうか。'}
           .detail
             = news.created_at
             = ' by ' + news.user.name

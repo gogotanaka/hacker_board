@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :news, only: [:show, :new, :create, :destroy]
+  get 'news/jump/:id' => 'news#jump', as: :news_jump
 
   get 'welcome/index'
 
