@@ -26,6 +26,9 @@ $brand-danger: #d9534f;
 $brand-danger-l: #d43f3a;
 
 
+.main-color { color: $mainColor }
+.gray-color { color: $grayColor }
+
 .navbar-brand { color: #fff !important; }
 
 .navbar-default {
@@ -103,7 +106,9 @@ body {
             h2 {
               font-size: 25px;
               margin: 0 0 5px 0;
-              a { color: $mainColor !important; }
+              a.title { color: $mainColor !important; }
+              a.deleteBtn { color: $grayColor !important; }
+
             }
             .detail {
               color: $grayColor;

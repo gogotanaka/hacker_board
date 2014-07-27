@@ -5,10 +5,13 @@
 %h4= @news.contents
 
 - @news.comments.each do |comment|
-  %p
+  %div
     = comment.contents
-    by
-    = comment.user.name
+    %span.main-color
+      = comment.user.name
+    - if comment.user == current_user
+      = link_to 'x', comment_path(comment), method: :delete, class: 'gray-color', data: {confirm: 'コメントを削除します。本当に宜しいでしょうか。'}
+
 - if current_user
   = form_for @comment, class: 'form-horizontal' do |f|
     - if @news.errors.any?
@@ -26,13 +29,3 @@
       = f.submit 'コメントする', class: 'btn btn-primary'
 - else
   ログインするとコメントできるようになるでやんす
-
-
-
-
-
-
-
-= link_to 'Edit', edit_news_path(@news)
-\|
-= link_to 'Back', news_index_path

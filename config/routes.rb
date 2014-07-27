@@ -7,8 +7,13 @@ Rails.application.routes.draw do
 
   post 'users/vote'
 
+  post 'comments' => 'users#post_comment', as: :comments
+  delete 'comment/:id' => 'users#delete_comment', as: :comment
+
+
+
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-  resources :news
+  resources :news, only: [:show, :new, :create, :destroy]
 
   get 'welcome/index'
 
@@ -20,7 +25,7 @@ Rails.application.routes.draw do
 
 
 
-  post 'comments' => 'users#post_comment', as: :comments
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

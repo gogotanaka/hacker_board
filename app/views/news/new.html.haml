@@ -1,5 +1,24 @@
 %h1 New news
 #news
-  = render 'form'
-
-= link_to 'Back', news_index_path
+  = form_for @news, class: 'form-horizontal' do |f|
+    - if @news.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@news.errors.count, "error")} prohibited this news from being saved:"
+        %ul
+          - @news.errors.full_messages.each do |msg|
+            %li= msg
+    = f.hidden_field :user_id, value: current_user.id
+    .form-group.row
+      = f.label :title, class: 'col-sm-2 control-label'
+      .col-sm-4
+        = f.text_field :title, class: 'form-control'
+    .form-group.row
+      = f.label :url, class: 'col-sm-2 control-label'
+      .col-sm-4
+        = f.text_field :url, class: 'form-control'
+    .form-group.row
+      = f.label :contents, class: 'col-sm-2 control-label'
+      .col-sm-4
+        = f.text_area :contents, class: 'form-control'
+    .form-group.row
+      = f.submit '投稿する', class: 'btn btn-primary'

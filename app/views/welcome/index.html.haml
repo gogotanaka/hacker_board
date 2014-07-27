@@ -3,24 +3,36 @@
     = link_to new_news_path, class: 'btn btn-danger', style: 'margin-right: 10px' do
       %i.fa.fa-pencil
       ニュースを投稿する
-
-  = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary' do
-    %i.fa.fa-facebook-square
-    Facebookログイン
+    = link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary' do
+      %i.fa.fa-facebook-square
+      ログアウト
+  - else
+    = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary' do
+      %i.fa.fa-facebook-square
+      Facebookログイン
   %ul#newsWrapper
     - News.all.each.with_index(1) do |news, i|
       %li.newsList.clearfix
         .rankingIcon= i
         .voteInfo
           .voteBtn
-            = link_to users_vote_path(news_id: news.id), method: :post do
-              %i.fa.fa-sort-asc
+            - if current_user
+              - if current_user.vote_news.include?(news)
+                %i.fa.fa-sort-asc.main-color
+              - else
+                = link_to users_vote_path(news_id: news.id), method: :post do
+                  %i.fa.fa-sort-asc
+            - else
+              = link_to '#', onclick: 'alert("ログインすると投票が出来るようになります。")' do
+                %i.fa.fa-sort-asc
           .voteCount
             = news.relation_votes.count
         .newsContents
           %h2
-            = link_to news.url do
+            = link_to news.url, class: 'title' do
               = truncate(news.title, length: 20)
+            - if current_user == news.user
+              = link_to 'x', news_path(news), method: :delete, class: 'deleteBtn'
           .detail
             = news.created_at
             = ' by ' + news.user.name

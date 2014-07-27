@@ -15,7 +15,16 @@ class UsersController < ApplicationController
   end
 
   def post_comment
-    current_user.comments.create(params.require(:comment).permit(:contents, :news_id))
+    current_user.comments.create(
+      params
+        .require(:comment)
+        .permit(:contents, :news_id)
+    )
+    redirect_to :back
+  end
+
+  def delete_comment
+    current_user.comments.find(params[:id]).try(:destroy)
     redirect_to :back
   end
 end
