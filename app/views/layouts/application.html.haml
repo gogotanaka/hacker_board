@@ -7,10 +7,21 @@
     = favicon_link_tag 'favicon.jpg'
     = csrf_meta_tags
   %body
-    %nav#header
+    %nav#header.clearfix
       #logWrapper
         = link_to 'Hacker Board', root_path, class: 'navbar-brand'
-
+        .pull-right
+          .clearfix.Btns
+            - if current_user
+              = link_to destroy_user_session_path, method: :delete, class: 'btn-logout pull-right' do
+                %i.fa.fa-power-off
+              = link_to new_news_path, class: 'pull-right btn-post' do
+                %i.fa.fa-plus-circle
+            - else
+              = link_to user_omniauth_authorize_path(:facebook), class: 'btn-facebook pull-right' do
+                %i.fa.fa-facebook-square
+              = link_to '#', class: 'pull-right btn-post', onclick: 'alert("ログインするとニュースをシェアする事が出来るようになります。")' do
+                %i.fa.fa-plus-circle
 
     #mainContents
       = yield

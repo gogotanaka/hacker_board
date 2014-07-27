@@ -1,19 +1,19 @@
 #welcome
-  .clearfix.Btns
-    - if current_user
-      = link_to destroy_user_session_path, method: :delete, class: 'btn btn-danger pull-right', style: 'margin-top: 10px' do
-        %i.fa.fa-power-off
-        ログアウト
-      = link_to new_news_path, class: 'btn btn-primary pull-right', style: 'margin-right: 10px; margin-top: 10px' do
-        %i.fa.fa-pencil
-        ニュースをシェアする
-    - else
-      = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-facebook pull-right', style: 'margin-top: 10px'do
-        %i.fa.fa-facebook-square
-        Facebookログイン
-      = link_to '#', class: 'btn btn-primary pull-right', style: 'margin-right: 10px; margin-top: 10px', onclick: 'alert("ログインするとニュースをシェアする事が出来るようになります。")' do
-        %i.fa.fa-pencil
-        ニュースをシェアする
+  / .clearfix.Btns
+  /   - if current_user
+  /     = link_to destroy_user_session_path, method: :delete, class: 'btn btn-danger pull-right', style: 'margin-top: 10px' do
+  /       %i.fa.fa-power-off
+  /       ログアウト
+  /     = link_to new_news_path, class: 'btn btn-primary pull-right', style: 'margin-right: 10px; margin-top: 10px' do
+  /       %i.fa.fa-pencil
+  /       ニュースをシェアする
+  /   - else
+  /     = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-facebook pull-right', style: 'margin-top: 10px'do
+  /       %i.fa.fa-facebook-square
+  /       Facebookログイン
+  /     = link_to '#', class: 'btn btn-primary pull-right', style: 'margin-right: 10px; margin-top: 10px', onclick: 'alert("ログインするとニュースをシェアする事が出来るようになります。")' do
+  /       %i.fa.fa-pencil
+  /       ニュースをシェアする
 
 
   %ul#newsWrapper

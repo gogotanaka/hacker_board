@@ -27,10 +27,26 @@ $grayColor: #999;
 
 .navbar-brand { color: #fff !important; }
 
+@mixin a_btn {
+  margin-top: 4px;
+  font-size: 31px;
+  color: #fff;
+  &:hover {
+    color: #ddd;
+  }
+}
 
 .btn-facebook {
-  background-color: #425f9c !important;
-  border-color: #425f9c !important;
+  @include a_btn;
+}
+
+.btn-post {
+  @include a_btn;
+  margin-right: 20px;
+}
+
+.btn-logout {
+  @include a_btn;
 }
 
 body { background-color: rgb(235,235,235) !important; }
@@ -57,7 +73,7 @@ body {
   }
   #mainContents {
     margin: 50px auto 0;
-    padding: 40px;
+    padding: 11px 40px 40px;
     @include rounded_corners(2px);
     background-color: #fff;
     width: 975px;
@@ -90,9 +106,7 @@ body {
       }
     }
     #welcome {
-      .Btns {
-        margin-bottom: 10px;
-      }
+
     }
     #users {
       #show {
