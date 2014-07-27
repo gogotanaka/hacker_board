@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users, only: [:show, :edit, :index]
+  resources :users, only: [:show, :edit]
   post 'users/vote'
 
   post 'comments' => 'users#post_comment', as: :comments
