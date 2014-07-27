@@ -16,7 +16,7 @@
   transform: translateY(-50%);
 }
 
-$mainColor: #37BC9B;
+$mainColor: #00c349;
 
 $grayColor: #999;
 
@@ -67,7 +67,9 @@ body {
       }
     }
     #welcome {
-
+      .Btns {
+        margin-bottom: 10px;
+      }
     }
   }
   ul#newsWrapper {
