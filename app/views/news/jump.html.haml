@@ -1,3 +1,5 @@
-%h3 以下のURLに飛ぼうととしています。
 #news
-= link_to @news.url, @news.url.to_s
+  #jump
+    %h3.main-color= @news.title
+    %h5 以下のURLに飛ぼうととしています。
+    = link_to @news.url, @news.url.to_s

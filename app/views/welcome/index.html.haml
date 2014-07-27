@@ -1,10 +1,10 @@
 #welcome
   .clearfix.Btns
     - if current_user
-      = link_to destroy_user_session_path, method: :delete, class: 'btn btn-danger pull-right' do
+      = link_to destroy_user_session_path, method: :delete, class: 'btn btn-danger pull-right', style: 'margin-top: 10px' do
         %i.fa.fa-power-off
         ログアウト
-      = link_to new_news_path, class: 'btn btn-primary pull-right', style: 'margin-right: 10px' do
+      = link_to new_news_path, class: 'btn btn-primary pull-right', style: 'margin-right: 10px; margin-top: 10px' do
         %i.fa.fa-pencil
         ニュースを投稿する
     - else
