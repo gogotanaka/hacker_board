@@ -16,7 +16,7 @@ class NewsController < ApplicationController
   # POST /news
   # POST /news.json
   def create
-    @news = News.new(news_params)
+    @news = current_user.news.new(news_params)
 
     respond_to do |format|
       if @news.save
@@ -47,6 +47,6 @@ class NewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def news_params
-      params.require(:news).permit(:title, :url, :contents, :user_id)
+      params.require(:news).permit(:title, :url, :contents)
     end
 end

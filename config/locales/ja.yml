@@ -6,6 +6,9 @@ ja:
         title: タイトル
         url: url
         contents: 補足
+      comment:
+        user_id: 投稿者
+        contents: 内容
   devise:
     confirmations:
       confirmed: アカウントを登録しました。

@@ -8,7 +8,6 @@
           %ul
             - @news.errors.full_messages.each do |msg|
               %li= msg
-      = f.hidden_field :user_id, value: current_user.id
       .form-group.row
         = f.label :user_id, class: 'col-sm-2 control-label'
         .col-sm-4

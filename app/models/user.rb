@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 
   has_many :comments
 
+  has_many :news
+
   def vote(news)
     unless vote?(news)
       vote_news << news
