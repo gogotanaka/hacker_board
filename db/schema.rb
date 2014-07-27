@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20140726215804) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "image"
+    t.string   "facebook_url"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

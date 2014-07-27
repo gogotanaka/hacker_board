@@ -8,6 +8,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :oauth_token
       t.datetime :oauth_expires_at
+      t.string :image
+      t.string :facebook_url
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""

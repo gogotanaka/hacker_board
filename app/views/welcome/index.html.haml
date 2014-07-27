@@ -31,12 +31,13 @@
           %h2
             = link_to news_jump_path(news), class: 'title' do
               = truncate(news.title, length: 20)
-            - if current_user == news.user
-              = link_to 'x', news_path(news), method: :delete, class: 'deleteBtn', data: {confirm: 'ニュースを削除します。本当に宜しいでしょうか。'}
+
           .detail
-            = news.created_at
             = ' by '
             = user_link(news.user)
+            = '  ' + formalize(news.created_at)
+            - if current_user == news.user
+              = link_to 'x', news_path(news), method: :delete, class: 'red-color', data: {confirm: 'ニュースを削除します。本当に宜しいでしょうか。'}
             // = news.contents
         .commentBtn
           = link_to news_path(news) do

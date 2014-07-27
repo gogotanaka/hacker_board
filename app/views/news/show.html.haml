@@ -1,31 +1,34 @@
-%p#notice= notice
+#news
+  %h3= @news.title
 
-%h3= @news.title
+  %h4= @news.contents
+  %ul#comments
+    - @news.comments.each do |comment|
+      %li.comment
+        = comment.contents
+        %span.gray-color
+          = ' by '
+        %span.main-color
+          = user_link(comment.user)
+        %span.gray-color
+          = '  ' + formalize(comment.created_at)
+        - if comment.user == current_user
+          = link_to 'x', comment_path(comment), method: :delete, class: 'red-color', data: {confirm: 'コメントを削除します。本当に宜しいでしょうか。'}
 
-%h4= @news.contents
-
-- @news.comments.each do |comment|
-  %div
-    = comment.contents
-    %span.main-color
-      = user_link(comment.user)
-    - if comment.user == current_user
-      = link_to 'x', comment_path(comment), method: :delete, class: 'gray-color', data: {confirm: 'コメントを削除します。本当に宜しいでしょうか。'}
-
-- if current_user
-  = form_for @comment, class: 'form-horizontal' do |f|
-    - if @news.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@news.errors.count, "error")} prohibited this news from being saved:"
-        %ul
-          - @news.errors.full_messages.each do |msg|
-            %li= msg
-    = f.hidden_field :news_id, value: @news.id
-    .form-group.row
-      = f.label :contents, class: 'col-sm-2 control-label'
-      .col-sm-4
-        = f.text_area :contents, class: 'form-control'
-    .form-group.row
-      = f.submit 'コメントする', class: 'btn btn-primary'
-- else
-  ログインするとコメントできるようになるでやんす
+  - if current_user
+    = form_for @comment, class: 'form-horizontal' do |f|
+      - if @news.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@news.errors.count, "error")} prohibited this news from being saved:"
+          %ul
+            - @news.errors.full_messages.each do |msg|
+              %li= msg
+      = f.hidden_field :news_id, value: @news.id
+      .form-group.row
+        = f.label :contents, class: 'col-sm-2 control-label'
+        .col-sm-4
+          = f.text_area :contents, class: 'form-control'
+      .form-group.row
+        = f.submit 'コメントする', class: 'btn btn-primary'
+  - else
+    ログインするとコメントできるようになるでやんす
