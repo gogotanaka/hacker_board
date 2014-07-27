@@ -1,7 +1,6 @@
 #news
   #show
-    %h3
-      = link_to @news.title, news_jump_path(@news), class: 'main-color'
+    %h3= link_to @news.title, news_jump_path(@news), class: 'main-color'
 
     %h4= @news.contents
     %ul#comments

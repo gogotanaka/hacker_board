@@ -30,10 +30,7 @@
           .voteCount
             = news.relation_votes.count
         .newsContents
-          %h2
-            = link_to news_jump_path(news), class: 'main-color' do
-              = truncate(news.title, length: 25)
-
+          %h2= news_title(news)
           .detail
             = ' by '
             = user_link(news.user)
