@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def formalize(time)
-    time.strftime("%Y-%m-%d %H:%M:%S")
+    time < 1.minute.ago ? "#{time_ago_in_words(time)}前" : '1分以内'
   end
 
   def news_title(news)
