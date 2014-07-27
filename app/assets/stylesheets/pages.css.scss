@@ -16,17 +16,9 @@
   transform: translateY(-50%);
 }
 
-$mainColor: rgb(74, 175, 58);
+$mainColor: #37BC9B;
 
 $grayColor: #999;
-
-$brand-primary: #425f9c;
-
-$brand-danger: #d9534f;
-$brand-danger-l: #d43f3a;
-
-$brand-info: rgb(74, 175, 58);
-$brand-info-l: rgb(74, 175, 58);
 
 .main-color { color: $mainColor }
 .gray-color { color: $grayColor }
@@ -40,20 +32,6 @@ $brand-info-l: rgb(74, 175, 58);
   border-color: $mainColor !important;
 }
 
-.btn-primary {
-  background-color: $brand-primary !important;
-  border-color: $brand-primary !important;
-}
-
-.btn-danger {
-  background-color: $brand-danger !important;
-  border-color: $brand-danger-l !important;
-}
-
-.btn-info {
-  background-color: $brand-info !important;
-  border-color: $brand-info-l !important;
-}
 
 body { background-color: rgb(235,235,235) !important; }
 
@@ -123,6 +101,9 @@ body {
           margin-bottom: -10px;
           a {
             color: $grayColor !important;
+            &:hover {
+              color: $mainColor !important;
+            }
           }
         }
         .voteCount {
@@ -136,7 +117,6 @@ body {
         h2 {
           font-size: 25px;
           margin: 0 0 5px 0;
-          a.title { color: $mainColor !important; }
           a.deleteBtn { color: $grayColor !important; }
 
         }
