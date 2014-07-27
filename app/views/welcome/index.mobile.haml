@@ -6,15 +6,11 @@
         ログアウト
       = link_to new_news_path, class: 'btn btn-primary pull-right', style: 'margin-right: 10px; margin-top: 10px' do
         %i.fa.fa-pencil
-        ニュースをシェアする
+        ニュースを投稿する
     - else
-      = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-facebook pull-right', style: 'margin-top: 10px'do
+      = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-facebook pull-right' do
         %i.fa.fa-facebook-square
         Facebookログイン
-      = link_to '#', class: 'btn btn-primary pull-right', style: 'margin-right: 10px; margin-top: 10px', onclick: 'alert("ログインするとニュースをシェアする事が出来るようになります。")' do
-        %i.fa.fa-pencil
-        ニュースをシェアする
-
 
   %ul#newsWrapper
     - @news.each.with_index(1) do |news, i|
@@ -29,7 +25,7 @@
                 = link_to users_vote_path(news_id: news.id), method: :post do
                   %i.fa.fa-sort-asc
             - else
-              = link_to '#', onclick: 'alert("ログインするとニュースをプッシュする事が出来るようになります。")' do
+              = link_to '#', onclick: 'alert("ログインすると投票が出来るようになります。")' do
                 %i.fa.fa-sort-asc
           .voteCount
             = news.relation_votes.count

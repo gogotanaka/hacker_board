@@ -11,7 +11,7 @@
               = link_to users_vote_path(news_id: news.id), method: :post do
                 %i.fa.fa-sort-asc
           - else
-            = link_to '#', onclick: 'alert("ログインすると投票が出来るようになります。")' do
+            = link_to '#', onclick: 'alert("ログインするとニュースをプッシュする事が出来るようになります。")' do
               %i.fa.fa-sort-asc
         .voteCount
           = news.relation_votes.count
