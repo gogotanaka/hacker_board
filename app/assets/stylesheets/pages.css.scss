@@ -25,6 +25,8 @@ $brand-primary: #425f9c;
 $brand-danger: #d9534f;
 $brand-danger-l: #d43f3a;
 
+$brand-info: rgb(74, 175, 58);
+$brand-info-l: rgb(74, 175, 58);
 
 .main-color { color: $mainColor }
 .gray-color { color: $grayColor }
@@ -44,6 +46,11 @@ $brand-danger-l: #d43f3a;
 .btn-danger {
   background-color: $brand-danger !important;
   border-color: $brand-danger-l !important;
+}
+
+.btn-info {
+  background-color: $brand-info !important;
+  border-color: $brand-info-l !important;
 }
 
 body { background-color: rgb(235,235,235) !important; }
