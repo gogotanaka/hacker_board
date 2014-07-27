@@ -5,7 +5,7 @@ ja:
         user_id: 投稿者
         title: タイトル
         url: url
-        contents: 補足
+        contents: ひと言
       comment:
         user_id: 投稿者
         contents: 内容
