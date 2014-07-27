@@ -39,7 +39,3 @@
             = f.submit 'コメントする', class: 'btn btn-primary'
     - else
       ログインするとコメントできるようになります。
-      %div{style: 'margin-top: 20px;'}
-        = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-facebook' do
-          %i.fa.fa-facebook-square
-          Facebookログイン
