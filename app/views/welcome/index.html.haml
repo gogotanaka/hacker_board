@@ -11,7 +11,7 @@
       %i.fa.fa-facebook-square
       Facebookログイン
   %ul#newsWrapper
-    - News.all.each.with_index(1) do |news, i|
+    - @news.each.with_index(1) do |news, i|
       %li.newsList.clearfix
         .rankingIcon= i
         .voteInfo
