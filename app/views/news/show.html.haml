@@ -8,7 +8,7 @@
   %div
     = comment.contents
     %span.main-color
-      = comment.user.name
+      = user_link(comment.user)
     - if comment.user == current_user
       = link_to 'x', comment_path(comment), method: :delete, class: 'gray-color', data: {confirm: 'コメントを削除します。本当に宜しいでしょうか。'}
 

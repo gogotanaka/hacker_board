@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/index'
 
-  get 'users/show'
-
-  get 'users/edit'
-
+  resources :users, only: [:show, :edit, :index]
   post 'users/vote'
 
   post 'comments' => 'users#post_comment', as: :comments

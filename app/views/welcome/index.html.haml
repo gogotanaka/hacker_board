@@ -35,7 +35,8 @@
               = link_to 'x', news_path(news), method: :delete, class: 'deleteBtn', data: {confirm: 'ニュースを削除します。本当に宜しいでしょうか。'}
           .detail
             = news.created_at
-            = ' by ' + news.user.name
+            = ' by '
+            = user_link(news.user)
             // = news.contents
         .commentBtn
           = link_to news_path(news) do
