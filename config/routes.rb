@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get 'dashboard/' => 'dashboard#index'
     get 'dashboard/users'
     get 'dashboard/news'
+    resources :news, only: [:index, :edit]
   end
 
   resources :users, only: [:show, :edit]
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
 
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-  resources :news, only: [:show, :new, :create, :destroy]
+  resources :news, only: [:show, :new, :create, :destroy, :update]
   get 'news/jump/:id' => 'news#jump', as: :news_jump
 
   get 'welcome/index'

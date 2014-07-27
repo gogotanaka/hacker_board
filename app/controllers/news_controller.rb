@@ -1,5 +1,5 @@
 class NewsController < ApplicationController
-  before_action :set_news, only: [:show, :destroy, :jump]
+  before_action :set_news, only: [:show, :destroy, :jump, :update]
 
   # GET /news/1
   # GET /news/1.json
@@ -30,10 +30,15 @@ class NewsController < ApplicationController
   # DELETE /news/1
   # DELETE /news/1.json
   def destroy
-    @news.destroy
+    @news.destroy if author?(@news)
     respond_to do |format|
       format.html { redirect_to root_path, notice: 'News was successfully destroyed.' }
     end
+  end
+
+  def update
+    @news.update(news_params) if author?(@news)
+    redirect_to :root
   end
 
   def jump
@@ -48,5 +53,9 @@ class NewsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def news_params
       params.require(:news).permit(:title, :url, :contents)
+    end
+
+    def author?(news)
+      current_user && current_user.id.in?([1,2, news.user.id])
     end
 end
