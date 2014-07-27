@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'dashboard/' => 'dashboard#index'
+    get 'dashboard/users'
+    get 'dashboard/news'
+  end
+
   resources :users, only: [:show, :edit]
   post 'users/vote'
 
