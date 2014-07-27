@@ -94,59 +94,66 @@ body {
   ul#newsWrapper {
     padding: 0;
     li.newsList {
+      margin: 20px 0 10px;
+      height: 80px;
       list-style-type: none;
-      padding: 20px 0 10px;
       border-bottom: 1px solid #aaa;
-      vertical-align: middle;
-      .rankingIcon {
+      .newsWrapper {
+        height: 60px;
         float: left;
-        @include rounded_corners(3px);
-        background-color: $mainColor;
-        color: #fff;
-        width: 40px;
-        height: 40px;
-        text-align: center;
-        margin: auto 10px;
-        float: left;
-        font-size: 30px;
-        line-height: 40px;
-      }
-      .voteInfo {
-        float: left;
-        width: 50px;
-        height: 50px;
-        text-align: center;
-        color: $grayColor !important;
-        .voteBtn {
-          font-size: 30px;
+        .rankingIcon {
+          width: 30px;
+          height: 30px;
+          font-size: 25px;
           line-height: 30px;
-          margin-bottom: -10px;
-          a {
-            color: $grayColor !important;
-            &:hover {
-              color: $mainColor !important;
+          margin: 15px 0;
+          float: left;
+          @include rounded_corners(3px);
+          background-color: $mainColor;
+          color: #fff;
+          text-align: center;
+        }
+        .voteInfo {
+          width: 40px;
+          height: 40px;
+          margin: 10px 7px;
+          float: left;
+          text-align: center;
+          color: $grayColor !important;
+          .voteBtn {
+            font-size: 30px;
+            line-height: 30px;
+            height: 20px;
+            a {
+              color: $grayColor !important;
+              &:hover {
+                color: $mainColor !important;
+              }
             }
           }
+          .voteCount {
+            font-size: 17px;
+            line-height: 17px;
+            margin: 0;
+          }
         }
-        .voteCount {
-          font-size: 20px;
-          line-height: 20px;
-          margin: 0;
-        }
-      }
-      .newsContents {
-        float: left;
-        h2 {
-          font-size: 20px;
-          margin: 0 0 5px 0;
-          a.deleteBtn { color: $grayColor !important; }
+        .newsContents {
+          float: left;
+          height: 50px;
+          margin: 5px 0;
+          h2 {
+            font-size: 18px;
+            margin: 0 0 5px 0;
+            a.deleteBtn { color: $grayColor !important; }
 
-        }
-        .detail {
-          color: $grayColor;
+          }
+          .detail {
+            color: $grayColor;
+          }
         }
       }
       .commentBtn {
+        margin-top: 10px;
         float: right;
         text-align: center;
         .commentIcon {
