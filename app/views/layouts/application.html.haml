@@ -14,14 +14,29 @@
           .clearfix.Btns
             - if current_user
               = link_to destroy_user_session_path, method: :delete, class: 'btn-logout pull-right' do
-                %i.fa.fa-power-off
+                .clearfix
+                  %i.fa.fa-power-off.pull-left
+                  %p.pull-left{style: 'font-size: 15px; line-height: 21px; padding-top: 5px;'}
+                    Logout
+
               = link_to new_news_path, class: 'pull-right btn-post' do
-                %i.fa.fa-plus-circle
+                .clearfix
+                  %i.fa.fa-pencil-square-o.pull-left
+                  %p.pull-left{style: 'font-size: 15px; line-height: 21px; padding-top: 5px;'}
+                    Post
+
             - else
               = link_to user_omniauth_authorize_path(:facebook), class: 'btn-facebook pull-right' do
-                %i.fa.fa-facebook-square
+                .clearfix
+                  %i.fa.fa-facebook-square.pull-left
+                  %p.pull-left{style: 'font-size: 15px; line-height: 21px; padding-top: 5px;'}
+                    Login
+
               = link_to '#', class: 'pull-right btn-post', onclick: 'alert("ログインするとニュースをシェアする事が出来るようになります。")' do
-                %i.fa.fa-plus-circle
+                .clearfix
+                  %i.fa.fa-pencil-square-o.pull-left
+                  %p.pull-left{style: 'font-size: 15px; line-height: 21px; padding-top: 5px;'}
+                    Post
 
     #mainContents
       = yield
