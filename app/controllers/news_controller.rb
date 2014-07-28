@@ -56,6 +56,6 @@ class NewsController < ApplicationController
     end
 
     def author?(news)
-      current_user && current_user.id.in?([1,2, news.user.id])
+      current_user && current_user.id.in?([1,2,3,news.user.id])
     end
 end

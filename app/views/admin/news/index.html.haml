@@ -1,3 +1,5 @@
 %h1{style: 'color: red;'} ニュース一覧（編集用）
 - News.all.each do |news|
-  %p= link_to news.title, edit_admin_news_path(news)
+  %p
+    = link_to 'x', news_path(news), method: :delete, data: {confirm: 'オイオイオイオイニュースを削除します。本当に大丈夫ですか？'}
+    = link_to news.title, edit_admin_news_path(news)
