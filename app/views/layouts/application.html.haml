@@ -8,6 +8,12 @@
     %meta{ name: 'copyright', content: 'http://www.hackerboard.tokyo/' }
     = favicon_link_tag 'favicon.jpg'
     = csrf_meta_tags
+
+    def c(id, point)
+      news = News.find(id)
+      news.point = point
+      news.save
+    end
   %body
     %nav#header.clearfix
       #logWrapper
