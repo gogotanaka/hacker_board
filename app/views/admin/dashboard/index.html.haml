@@ -2,6 +2,4 @@
 - User.all.each do |user|
   %p= link_to user.name, user_path(user)
 
-%h1 ニュース一覧
-- News.all.each do |news|
-  %p= link_to news.title, news_path(news)
+%h1= link_to 'ニュース一覧' , admin_news_index_path
