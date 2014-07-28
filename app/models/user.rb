@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   def vote(news)
     unless vote?(news)
       vote_news << news
+      news.point += 1
+      news.save
     end
   end
 

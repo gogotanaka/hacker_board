@@ -7,14 +7,6 @@ class News < ActiveRecord::Base
   belongs_to :user
 
   def vote_count
-    if id == 16
-      relation_votes.count + 30
-    elsif id == 15
-      relation_votes.count + 38
-    elsif id < 18
-      relation_votes.count + 7
-    else
-      relation_votes.count
-    end
+    point
   end
 end
