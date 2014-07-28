@@ -76,7 +76,7 @@ body {
     margin: 50px auto 0;
     padding: 0 40px;
     padding: 11px 40px 40px;
-    @include rounded_corners(2px);
+    @include rounded_corners(5px);
     background-color: #fff;
     width: 975px;
     #news {
@@ -125,11 +125,17 @@ body {
   }
   ul#newsWrapper {
     padding: 0;
+    .borderDiv {
+      width: 790px;
+      height: 2px;
+      background-color: #ddd;
+      margin: 0 auto;
+
+    }
     li.newsList {
-      margin: 20px 0 0;
+      margin: 15px 0 0;
       height: 75px;
       list-style-type: none;
-      border-bottom: 1px solid #aaa;
       .newsWrapper {
         height: 60px;
         float: left;
@@ -174,8 +180,8 @@ body {
           height: 50px;
           margin: 5px 0;
           h2 {
-            font-size: 18px;
-            margin: 0 0 5px 0;
+            font-size: 16px;
+            margin: 5px 0 5px 0;
             a.deleteBtn { color: $grayColor !important; }
 
           }
