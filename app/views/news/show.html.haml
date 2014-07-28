@@ -4,7 +4,7 @@
 
     %h4= @news.contents
     %ul#comments
-      - @news.comments.each do |comment|
+      - @news.comments.order(created_at: :asc).each do |comment|
         %li.comment
           .info
             %span.main-color
