@@ -15,7 +15,7 @@
               = link_to '#', onclick: 'alert("ログインするとニュースをプッシュする事が出来るようになります。")' do
                 %i.fa.fa-sort-asc
           .voteCount
-            = news.relation_votes.count
+            = news.vote_count
         .newsContents
           %h2= news_title(news)
 
