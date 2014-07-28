@@ -1,4 +1,4 @@
-class Admin::NewsController < ApplicationController
+class Admin::NewsController < Admin::BaseController
   def index
   end
 

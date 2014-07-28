@@ -1,4 +1,4 @@
-class Admin::BaseController < ApplicationController
+class Admin::BaseController < Admin::BaseController
   before_action :admin_required!
   http_basic_authenticate_with(name: 'hacker_board', password: 'fukefuke')
 
