@@ -9,7 +9,7 @@ class News < ActiveRecord::Base
   def vote_count
     if id == 16
       relation_votes.count + 30
-    elsif id == 17
+    elsif id == 15
       relation_votes.count + 38
     elsif id < 18
       relation_votes.count + 7
