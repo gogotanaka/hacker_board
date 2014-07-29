@@ -3,12 +3,9 @@
     #new
       %h1 New news
       = form_for @news, class: 'form-horizontal' do |f|
-        - if @news.errors.any?
+        - if alert
           #error_explanation
-            %h2= "#{pluralize(@news.errors.count, "error")} prohibited this news from being saved:"
-            %ul
-              - @news.errors.full_messages.each do |msg|
-                %li= msg
+            %p{style: 'color: #999;'}= alert
         .form-group.row
           = f.label :user_id, class: 'col-sm-2 control-label'
           .col-sm-4

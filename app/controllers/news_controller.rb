@@ -1,3 +1,4 @@
+require 'uri'
 class NewsController < ApplicationController
   before_action :set_news, only: [:show, :destroy, :jump, :update]
 
@@ -18,11 +19,19 @@ class NewsController < ApplicationController
   def create
     @news = current_user.news.new(news_params)
 
+    original_url = @news.url
+
+    @news.url = URI.escape(original_url)
+
     respond_to do |format|
-      if @news.save
-        format.html { redirect_to root_path, notice: 'News was successfully created.' }
+      if @news.url =~ /https?:\/\/[\S]+/
+        if @news.save
+          format.html { redirect_to root_path, notice: 'News was successfully created.' }
+        else
+          format.html { render :new }
+        end
       else
-        format.html { render :new }
+        format.html { flash[:alert] = 'urlが不正です'; render :new }
       end
     end
   end
