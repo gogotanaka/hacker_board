@@ -24,5 +24,9 @@
     .col-sm-4
       = f.text_area :contents, class: 'form-control'
   .form-group.row
+    = f.label :point, class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_area :point, class: 'form-control'
+  .form-group.row
     .col-sm-2
       = f.submit 'ニュースを編集', class: 'btn btn-danger'
