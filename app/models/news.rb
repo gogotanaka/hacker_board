@@ -9,4 +9,8 @@ class News < ActiveRecord::Base
   def vote_count
     point
   end
+
+  def self.days_ago(i)
+    News.where(created_at: [(i+1).days.ago..i.days.ago])
+  end
 end

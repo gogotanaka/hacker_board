@@ -20,4 +20,17 @@ module ApplicationHelper
       truncate(news.title, length: 36)
     end
   end
+
+  def form_day(time)
+    wdays = %w(
+                Sunday
+                Monday
+                Tuesday
+                Wednesday
+                Thursday
+                Friday
+                Saturday
+              )
+    time.strftime('%-m/%-d') + " #{wdays[time.wday]}"
+  end
 end
