@@ -3,7 +3,7 @@ ja:
     attributes:
       news:
         user_id: 投稿者
-        title: タイトル
+        title: プロダクト名
         url: url
         contents: ひと言
       comment:
