@@ -6,6 +6,10 @@ class News < ActiveRecord::Base
 
   belongs_to :user
 
+  def user
+    User.first
+  end
+
   def vote_count
     point
   end
